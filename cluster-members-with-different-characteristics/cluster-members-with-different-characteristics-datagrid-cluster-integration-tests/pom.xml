@@ -1,0 +1,50 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"
+         xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>org.littlegrid</groupId>
+    <artifactId>cluster-members-with-different-characteristics-datagrid-cluster-integration-tests</artifactId>
+    <packaging>jar</packaging>
+    <version>1.0-SNAPSHOT</version>
+
+    <name>${project.artifactId}</name>
+
+    <parent>
+        <groupId>org.littlegrid</groupId>
+        <artifactId>cluster-members-with-different-characteristics-parent</artifactId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.littlegrid</groupId>
+            <artifactId>cluster-members-with-different-characteristics-datagrid-cluster</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.littlegrid</groupId>
+            <artifactId>littlegrid</artifactId>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <configuration>
+                    <forkMode>once</forkMode>
+                    <argLine>-Xmx768m -Xms768m -XX:MaxPermSize=384m</argLine>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+</project>
+
